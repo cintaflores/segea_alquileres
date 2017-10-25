@@ -87,24 +87,26 @@ class ci_propiedades extends SeGeA_2_ci
 	}
 
 
+	
 	function evt__procesar()
 	{
+		$this->dep('ci_propiedades')->setear_todos_los_formularios();
 		try {
-			$this->cn()->sincronizar();
-			$this->cn()->resetear();
-			$this->evt__cancelar();
-
+      $this->cn()->sincronizar();
+      $this->cn()->resetear();
+      $this->evt__cancelar();
 		} catch (toba_error_db $e) {
-			if (adebug::$debug){
+
+      if (adebug::$debug) {
 				throw $e;
 			} else {
-				$this->cn()->resetear();
-				$sql_state = $e->get_sqlstate();
-				if ($sql_state == 'db_23505'){
+        $this->cn()->resetear();
+        $sql_state = $e->get_sqlstate();
+				if ($sql_state == 'db_23505') {
 					throw new toba_error_usuario('La Propiedad que intenta ingresar, ya existe');
 				}
 			}
-			$this->cn()->resetear();
+    $this->cn()->resetear();
 		}
 	}
 

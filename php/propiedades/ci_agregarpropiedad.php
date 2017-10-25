@@ -56,29 +56,45 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		}
 		}
 
+
+
 		//-----------------------------------------------------------------------------------
 		//---- form_ml_fotos-------------------------------------------------------------------------
 		//-----------------------------------------------------------------------------------
-		// function evt__form_ml_fotos__modificacion($datos)
-		// {
-		// $this->s__datos['form_ml_fotos'] = $datos;
-		// $this->cn()->procesar_filas_fotos($datos);
-		// $this->cn()->set_blobs($datos);
-		// }
-		//
-		// function conf__form_ml_fotos(SeGeA_2_ei_formulario_ml $form_ml)
-		// {
-		// if (isset($this->s__datos['form_ml_fotos'])){
-		// 	$form_ml->set_datos($this->s__datos['form_ml_fotos']);
-		// } else {
-		// 	if($this->cn()->hay_cursor()) {
-		// 	$datos = $this->cn()->get_fotos();
-		// 	$datos = $this->cn()->get_blobs($datos);
-		// 	$this->s__datos['form_ml_fotos'] = $datos;
-		// 	$form_ml->set_datos($datos);
-		// 	}
-		// }
-		// }
+
+		function evt__form_ml_fotos__modificacion($datos)
+	{
+		$anterior = $this->s__datos['form_ml_fotos'];
+		foreach ($anterior as $keya => $valuea) {
+			foreach ($datos as $keyd => $valued) {
+				if (isset($valuea['id_propiedad'])){
+					if (isset($valued['id_propiedad'])){
+						if ($valuea['id_propiedad']=$valued['id_propiedad']){
+							if (isset($valuea['imagen']) && !isset($valued['imagen'])){
+								$datos[$keyd]['imagen'] = $valuea['imagen'];
+								$datos[$keyd]['imagen?html'] = $valuea['imagen?html'];
+								$datos[$keyd]['imagen?url'] = $valuea['imagen?url'];
+							}
+						}
+					}
+				}
+			}
+		}
+		$this->s__datos['form_ml_fotos'] = $datos;
+	}
+
+	function conf__form_ml_fotos(SeGeA_2_ei_formulario_ml $form_ml)
+	{
+		  if (isset($this->s__datos['form_ml_fotos'])) {
+				$datos = $this->s__datos['form_ml_fotos'];
+				$form_ml->set_datos($datos);
+			} else if ($this->cn()->hay_cursor()) {
+				$datos = $this->cn()->get_propiedades();
+				$datos = $this->cn()->get_blobs($datos);
+				$this->s__datos['form_ml_fotos'] = $datos;
+				$form_ml->set_datos($datos);
+			}
+	}
 
 
 

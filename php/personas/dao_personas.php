@@ -132,6 +132,30 @@ class dao_personas
     $opciones = consultar_fuente($sql);
     return $opciones;
   }
+
+  static function get_opcionesEmpresaComprobante()
+  {
+    $sql = " SELECT
+                    id_empresa_comprobante,
+                    nombre_empresa_comprobante
+              FROM empresas_comprobante
+              ORDER BY nombre_empresa_comprobante";
+
+    $opciones = consultar_fuente($sql);
+    return $opciones;
+  }
+
+  static function get_opcionesTiposCuentas()
+  {
+    $sql = " SELECT
+                    id_tipo_cuenta,
+                    nombre_tipo_cuenta
+              FROM tipos_cuentas
+              ORDER BY nombre_tipo_cuenta";
+
+    $opciones = consultar_fuente($sql);
+    return $opciones;
+  }
 }
 
 ?>
