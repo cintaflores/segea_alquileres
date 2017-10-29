@@ -100,20 +100,6 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000351', --objeto
-	'13000322', --col_id
-	'id_persona', --columna
-	'E', --tipo
-	'0', --pk
-	'', --secuencia
-	NULL, --largo
-	NULL, --no_nulo
-	'1', --no_nulo_db
-	'0', --externa
-	'propiedades'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'SeGeA_2', --objeto_proyecto
-	'13000351', --objeto
 	'13000323', --col_id
 	'id_tipo_propiedad', --columna
 	'E', --tipo
@@ -128,9 +114,9 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000351', --objeto
-	'13000384', --col_id
-	'imagen', --columna
-	'B', --tipo
+	'13000456', --col_id
+	'id_persona', --columna
+	'E', --tipo
 	'0', --pk
 	NULL, --secuencia
 	NULL, --largo

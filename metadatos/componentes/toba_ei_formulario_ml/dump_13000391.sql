@@ -262,7 +262,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --edit_ajustable
 	NULL, --edit_confirmar_clave
 	NULL, --edit_expreg
-	'13000038', --popup_item
+	'13000054', --popup_item
 	'SeGeA_2', --popup_proyecto
 	'0', --popup_editable
 	NULL, --popup_ventana

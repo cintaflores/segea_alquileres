@@ -4,7 +4,7 @@ class dao_propiedades
 {
   static function get_datos($where='')
   {
-    // ei_arbol($where);
+    //ei_arbol($where);
     if($where){
       $where_armado="WHERE $where";
     } else {
@@ -13,18 +13,54 @@ class dao_propiedades
       $sql = "SELECT
               t_pr.id_propiedad,
               t_pr.nombre_propiedad,
-              t_p.id_persona,
-              coalesce(razon_social, apellido||', '||nombre) entidad,
+              --t_p.id_persona,
+              -- coalesce(razon_social, apellido||', '||nombre) entidad,
               t_tpr.id_tipo_propiedad,
               t_tpr.nombre_tipo_propiedad
             	FROM
               	propiedades as t_pr
               	inner join tipos_propiedades as t_tpr on t_pr.id_tipo_propiedad=t_tpr.id_tipo_propiedad
-              	inner join personas as t_p on t_pr.id_persona=t_p.id_persona
+              	--inner join personas as t_p on t_pr.id_persona=t_p.id_persona
                 $where_armado";
       $datos = consultar_fuente($sql);
       return $datos;
   }
+
+  static function get_opcionesPropiedad()
+  {
+    $sql = " SELECT
+                    id_tipo_propiedad,
+                    nombre_tipo_propiedad
+              FROM tipos_propiedades
+              ORDER BY nombre_tipo_propiedad";
+
+    $opciones = consultar_fuente($sql);
+    return $opciones;
+  }
+
+  // static function get_lista_propiedades($where='')
+  // {
+  //   //ei_arbol($where);
+  //   if($where){
+  //     $where_armado="WHERE $where";
+  //   } else {
+  //     $where_armado="";
+  //   }
+  //     $sql = "SELECT
+  //             t_pr.id_propiedad,
+  //             t_pr.nombre_propiedad,
+  //             t_p.id_persona,
+  //             coalesce(razon_social, apellido||', '||nombre) entidad,
+  //             t_tpr.id_tipo_propiedad,
+  //             t_tpr.nombre_tipo_propiedad
+  //           	FROM
+  //             	propiedades as t_pr
+  //             	inner join tipos_propiedades as t_tpr on t_pr.id_tipo_propiedad=t_tpr.id_tipo_propiedad
+  //             	inner join personas as t_p on t_pr.id_persona=t_p.id_persona
+  //               $where_armado";
+  //     $datos = consultar_fuente($sql);
+  //     return $datos;
+  // }
 
 
   // static function get_opcionesPersona()
@@ -38,18 +74,18 @@ class dao_propiedades
   //   $opciones = consultar_fuente($sql);
   //   return $opciones;
   // }
-
-  static function get_opcionesPropiedad()
-  {
-    $sql = " SELECT
-                    id_tipo_propiedad,
-                    nombre_tipo_propiedad
-              FROM tipos_propiedades
-              ORDER BY nombre_tipo_propiedad";
-
-    $opciones = consultar_fuente($sql);
-    return $opciones;
-  }
+  //
+  // static function get_opcionesPropiedad()
+  // {
+  //   $sql = " SELECT
+  //                   id_tipo_propiedad,
+  //                   nombre_tipo_propiedad
+  //             FROM tipos_propiedades
+  //             ORDER BY nombre_tipo_propiedad";
+  //
+  //   $opciones = consultar_fuente($sql);
+  //   return $opciones;
+  // }
 
   static function get_descPopUpDomicilio($id_domicilio)
   {
@@ -71,7 +107,7 @@ class dao_propiedades
       return 'Falló, intente nuevamente';
     }
   }
-
+  
   static function get_descPopUpPais($id_pais)
   {
     $id_pais = quote($id_pais);

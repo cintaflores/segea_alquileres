@@ -30,14 +30,14 @@ class ci_propiedades extends SeGeA_2_ci
 	//---- Cuadro -----------------------------------------------------------------------
 	//-----------------------------------------------------------------------------------
 	function conf__cuadro($cuadro) {
-	if (isset($this->s__datos_filtro)){
-		$filtro = $this->dep('filtro');
-		$filtro->set_datos($this->s__datos_filtro);
-		$sql_where = $filtro->get_sql_where();
-		$datos = dao_propiedades::get_datos($sql_where);
-		$cuadro->set_datos($datos);
-	}
-	}
+    if (isset($this->s__datos_filtro)){
+      $filtro = $this->dep('filtro');
+      $filtro->set_datos($this->s__datos_filtro);
+      $sql_where = $filtro->get_sql_where();
+      $datos = dao_propiedades::get_datos($sql_where);
+      $cuadro->set_datos($datos);
+    }
+  }
 	function evt__cuadro__seleccion($seleccion)
 	{
 		$this->cn()->cargar($seleccion);
@@ -87,10 +87,10 @@ class ci_propiedades extends SeGeA_2_ci
 	}
 
 
-	
+
 	function evt__procesar()
 	{
-		$this->dep('ci_propiedades')->setear_todos_los_formularios();
+		$this->dep('ci_agregarpropiedad')->setear_todos_los_formularios();
 		try {
       $this->cn()->sincronizar();
       $this->cn()->resetear();

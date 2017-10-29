@@ -59,18 +59,6 @@ INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, i
 	'SeGeA_2', --proyecto
 	'admin', --usuario_grupo_acc
 	NULL, --item_id
-	'13000044'  --item
-);
-INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
-	'SeGeA_2', --proyecto
-	'admin', --usuario_grupo_acc
-	NULL, --item_id
-	'13000045'  --item
-);
-INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
-	'SeGeA_2', --proyecto
-	'admin', --usuario_grupo_acc
-	NULL, --item_id
 	'13000046'  --item
 );
 INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
@@ -119,6 +107,18 @@ INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, i
 	'SeGeA_2', --proyecto
 	'admin', --usuario_grupo_acc
 	NULL, --item_id
-	'13000065'  --item
+	'13000066'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'SeGeA_2', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'13000068'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'SeGeA_2', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'13000070'  --item
 );
 --- FIN Grupo de desarrollo 13

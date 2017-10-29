@@ -55,5 +55,33 @@ class cn_empresas extends SeGeA_2_cn
 		$this->dep('dr_empresa')->tabla('dt_empresa')->eliminar_todo();
 	}
 
+	//-----------------------------------------------------------------------------------
+	//---- dt_telefono ----------------------------------------------------------
+	//-----------------------------------------------------------------------------------
+	function procesar_filas($datos)
+	{
+		$this->dep('dr_empresa')->tabla('dt_telefono')->procesar_filas($datos);
+	}
+
+	function get_telefono()
+	{
+		$datos = $this->dep('dr_empresa')->tabla('dt_telefono')->get_filas();
+		return $datos;
+	}
+
+	//-----------------------------------------------------------------------------------
+	//---- dt_correos_electronicos ----------------------------------------------------------
+	//-----------------------------------------------------------------------------------
+	function procesar_filas_correo($datos)
+	{
+		$this->dep('dr_empresa')->tabla('dt_correos_electronicos')->procesar_filas($datos);
+	}
+
+	function get_correos_electronicos()
+	{
+		$datos = $this->dep('dr_empresa')->tabla('dt_correos_electronicos')->get_filas();
+		return $datos;
+	}
+
 }
 ?>
