@@ -138,5 +138,19 @@ class cn_propiedades extends SeGeA_2_cn
 					$datos = $this->dep('dr_propiedad')->tabla('dt_domicilio_por_propiedad')->get_filas();
 					return $datos;
 				}
+
+				//-----------------------------------------------------------------------------------
+				//---- dt_caracteristicas ----------------------------------------------------------
+				//-----------------------------------------------------------------------------------
+				function procesar_filas_caracteristicas($datos)
+				{
+					$this->dep('dr_propiedad')->tabla('dt_caracteristicas_por_propiedad')->procesar_filas($datos);
+				}
+
+				function get_caracteristicas()
+				{
+					$datos = $this->dep('dr_propiedad')->tabla('dt_caracteristicas_por_propiedad')->get_filas();
+					return $datos;
+				}
 }
 ?>

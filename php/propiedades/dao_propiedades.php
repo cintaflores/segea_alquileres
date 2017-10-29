@@ -107,7 +107,7 @@ class dao_propiedades
       return 'Falló, intente nuevamente';
     }
   }
-  
+
   static function get_descPopUpPais($id_pais)
   {
     $id_pais = quote($id_pais);
@@ -168,6 +168,22 @@ class dao_propiedades
     return $opciones;
   }
 
+  static function get_descPopUpCaracteristicas($id_caracteristica)
+  {
+    $id_caracteristica = quote($id_caracteristica);
+
+    $sql = "SELECT nombre_caracteristicas
+            	FROM caracteristicas
+             WHERE id_caracteristica = $id_caracteristica";
+
+    $resultado = consultar_fuente($sql);
+
+    if (count($resultado) > 0) {
+      return $resultado[0]['nombre_caracteristicas'];
+    } else {
+      return 'Falló, intente nuevamente';
+    }
+  }
 
 }
 

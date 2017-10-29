@@ -69,7 +69,7 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 					}
 			}
 
-			//-----------------------------------------------------------------------------------
+		//-----------------------------------------------------------------------------------
 		//---- form_ml_domicilios-------------------------------------------------------------------------
 		//-----------------------------------------------------------------------------------
 		function evt__form_ml_domicilios__modificacion($datos)
@@ -91,6 +91,28 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		}
 		}
 
+		//-----------------------------------------------------------------------------------
+		//---- form_ml_caracteristicas-------------------------------------------------------------------------
+		//-----------------------------------------------------------------------------------
+		function evt__form_ml_caracteristicas__modificacion($datos)
+		{
+		$this->s__datos['form_ml_caracteristicas'] = $datos;
+	//	$this->cn()->procesar_filas_caracteristicas($datos);
+		}
+
+		function conf__form_ml_caracteristicas(SeGeA_2_ei_formulario_ml $form_ml)
+		{
+		if (isset($this->s__datos['form_ml_caracteristicas'])){
+			$form_ml->set_datos($this->s__datos['form_ml_caracteristicas']);
+		} else {
+			if($this->cn()->hay_cursor()) {
+			$datos = $this->cn()->get_caracteristicas();
+			$this->s__datos['form_ml_caracteristicas'] = $datos;
+			$form_ml->set_datos($datos);
+			}
+		}
+		}
+
       function setear_todos_los_formularios()
       	{
       		if (isset($this->s__datos['form'])) {
@@ -102,6 +124,9 @@ class ci_agregarpropiedad extends SeGeA_2_ci
       		}
 					if (isset ($this->s__datos['form_ml_domicilios'])){
       			$this->cn()->procesar_filas_domicilios($this->s__datos['form_ml_domicilios']);
+      		}
+					if (isset ($this->s__datos['form_ml_caracteristicas'])){
+      			$this->cn()->procesar_filas_caracteristicas($this->s__datos['form_ml_caracteristicas']);
       		}
         }
 }
