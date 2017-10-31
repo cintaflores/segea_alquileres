@@ -20,8 +20,8 @@ class dao_empresas
               t_ce.nombre_correo_electronico
             	FROM
               	empresas as t_e
-              	inner join telefonos as t_t on t_e.id_empresa=t_t.id_empresa
-                inner join correos_electronicos as t_e on t_e.id_correo_electronico=t_ce.id_correo_electronico
+              	inner join telefonos_empresas as t_t on t_e.id_empresa=t_t.id_empresa
+                inner join correos_electronicos_empresas as t_e on t_ce.id_empresa=t_ce.id_empresa
                 $where_armado";
       $datos = consultar_fuente($sql);
       return $datos;

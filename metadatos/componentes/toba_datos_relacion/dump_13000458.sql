@@ -65,15 +65,15 @@ INSERT INTO apex_objeto_datos_rel (proyecto, objeto, debug, clave, ap, punto_mon
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
-	'13000361', --dep_id
+	'13000407', --dep_id
 	'13000458', --objeto_consumidor
-	'13000321', --objeto_proveedor
-	'dt_correos_electronicos', --identificador
-	NULL, --parametros_a
-	NULL, --parametros_b
+	'13000505', --objeto_proveedor
+	'dt_correos_electronicos_empresas', --identificador
+	'', --parametros_a
+	'', --parametros_b
 	NULL, --parametros_c
 	NULL, --inicializar
-	'3'  --orden
+	'1'  --orden
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
@@ -85,19 +85,19 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 	'', --parametros_b
 	NULL, --parametros_c
 	NULL, --inicializar
-	'1'  --orden
+	'2'  --orden
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
-	'13000360', --dep_id
+	'13000408', --dep_id
 	'13000458', --objeto_consumidor
-	'13000317', --objeto_proveedor
-	'dt_telefono', --identificador
-	NULL, --parametros_a
-	NULL, --parametros_b
+	'13000506', --objeto_proveedor
+	'dt_telefonos_empresas', --identificador
+	'', --parametros_a
+	'', --parametros_b
 	NULL, --parametros_c
 	NULL, --inicializar
-	'2'  --orden
+	'3'  --orden
 );
 --- FIN Grupo de desarrollo 13
 
@@ -109,15 +109,15 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
 	'SeGeA_2', --proyecto
 	'13000458', --objeto
-	'13000015', --asoc_id
+	'13000024', --asoc_id
 	NULL, --identificador
 	'SeGeA_2', --padre_proyecto
 	'13000459', --padre_objeto
 	'dt_empresa', --padre_id
 	NULL, --padre_clave
 	'SeGeA_2', --hijo_proyecto
-	'13000321', --hijo_objeto
-	'dt_correos_electronicos', --hijo_id
+	'13000505', --hijo_objeto
+	'dt_correos_electronicos_empresas', --hijo_id
 	NULL, --hijo_clave
 	NULL, --cascada
 	'1'  --orden
@@ -125,15 +125,15 @@ INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador
 INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
 	'SeGeA_2', --proyecto
 	'13000458', --objeto
-	'13000016', --asoc_id
+	'13000025', --asoc_id
 	NULL, --identificador
 	'SeGeA_2', --padre_proyecto
 	'13000459', --padre_objeto
 	'dt_empresa', --padre_id
 	NULL, --padre_clave
 	'SeGeA_2', --hijo_proyecto
-	'13000317', --hijo_objeto
-	'dt_telefono', --hijo_id
+	'13000506', --hijo_objeto
+	'dt_telefonos_empresas', --hijo_id
 	NULL, --hijo_clave
 	NULL, --cascada
 	'2'  --orden
@@ -146,18 +146,18 @@ INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador
 INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
 	'SeGeA_2', --proyecto
 	'13000458', --objeto
-	'13000015', --asoc_id
+	'13000024', --asoc_id
 	'13000459', --padre_objeto
 	'13000446', --padre_clave
-	'13000321', --hijo_objeto
-	'13000451'  --hijo_clave
+	'13000505', --hijo_objeto
+	'13000468'  --hijo_clave
 );
 INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
 	'SeGeA_2', --proyecto
 	'13000458', --objeto
-	'13000016', --asoc_id
+	'13000025', --asoc_id
 	'13000459', --padre_objeto
 	'13000446', --padre_clave
-	'13000317', --hijo_objeto
-	'13000452'  --hijo_clave
+	'13000506', --hijo_objeto
+	'13000475'  --hijo_clave
 );

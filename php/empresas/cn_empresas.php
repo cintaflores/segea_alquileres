@@ -60,12 +60,12 @@ class cn_empresas extends SeGeA_2_cn
 	//-----------------------------------------------------------------------------------
 	function procesar_filas($datos)
 	{
-		$this->dep('dr_empresa')->tabla('dt_telefono')->procesar_filas($datos);
+		$this->dep('dr_empresa')->tabla('dt_telefonos_empresas')->procesar_filas($datos);
 	}
 
 	function get_telefono()
 	{
-		$datos = $this->dep('dr_empresa')->tabla('dt_telefono')->get_filas();
+		$datos = $this->dep('dr_empresa')->tabla('dt_telefonos_empresas')->get_filas();
 		return $datos;
 	}
 
@@ -74,12 +74,12 @@ class cn_empresas extends SeGeA_2_cn
 	//-----------------------------------------------------------------------------------
 	function procesar_filas_correo($datos)
 	{
-		$this->dep('dr_empresa')->tabla('dt_correos_electronicos')->procesar_filas($datos);
+		$this->dep('dr_empresa')->tabla('dt_correos_electronicos_empresas')->procesar_filas($datos);
 	}
 
 	function get_correos_electronicos()
 	{
-		$datos = $this->dep('dr_empresa')->tabla('dt_correos_electronicos')->get_filas();
+		$datos = $this->dep('dr_empresa')->tabla('dt_correos_electronicos_empresas')->get_filas();
 		return $datos;
 	}
 
