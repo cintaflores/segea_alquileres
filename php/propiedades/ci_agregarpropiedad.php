@@ -33,8 +33,8 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 
 		function evt__form_ml_fotos__modificacion($datos)
 			{
-				$anterior = $this->s__datos['form_ml_fotos'];
-				foreach ($anterior as $keya => $valuea) {
+				// $anterior = $this->s__datos['form_ml_fotos'];
+				// foreach ($anterior as $keya => $valuea) {
 					foreach ($datos as $keyd => $valued) {
 						if (isset($valuea['id_imagen'])){
 							if (isset($valued['id_imagen'])){
@@ -48,23 +48,19 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 							}
 						}
 					}
-				}
+				// }
 				$this->s__datos['form_ml_fotos'] = $datos;
-				//if(isset ($this->s__datos['form_ml_fotos'])){
-					//$this->cn()->procesar_filas_fotos($this->s__datos['form_ml_fotos']);
-					//$this->cn()->set_blobs($this->s__datos['form_ml_fotos']);
-				//}
 			}
 
 			function conf__form_ml_fotos(SeGeA_2_ei_formulario_ml $form_ml)
 			{
-				  // if (isset($this->s__datos['form_ml_fotos'])) {
-					// 	$datos = $this->s__datos['form_ml_fotos'];
-					// 	$form_ml->set_datos($datos);
-					if ($this->cn()->hay_cursor()) {
+				  if (isset($this->s__datos['form_ml_fotos'])) {
+						$datos = $this->s__datos['form_ml_fotos'];
+						$form_ml->set_datos($datos);
+					} else if ($this->cn()->hay_cursor()) {
 						$datos = $this->cn()->get_fotos();
 						$datos = $this->cn()->get_blobs($datos);
-					//	$this->s__datos['form_ml_fotos'] = $datos;
+						$this->s__datos['form_ml_fotos'] = $datos;
 						$form_ml->set_datos($datos);
 					}
 			}
@@ -74,21 +70,13 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		//-----------------------------------------------------------------------------------
 		function evt__form_ml_domicilios__modificacion($datos)
 		{
-		$this->s__datos['form_ml_domicilios'] = $datos;
-	//	$this->cn()->procesar_filas_domicilios($datos);
+			$this->s__datos['form_ml_domicilios'] = $datos;
 		}
 
 		function conf__form_ml_domicilios(SeGeA_2_ei_formulario_ml $form_ml)
 		{
-		if (isset($this->s__datos['form_ml_domicilios'])){
-			$form_ml->set_datos($this->s__datos['form_ml_domicilios']);
-		} else {
-			if($this->cn()->hay_cursor()) {
 			$datos = $this->cn()->get_domicilios();
-			$this->s__datos['form_ml_domicilios'] = $datos;
 			$form_ml->set_datos($datos);
-			}
-		}
 		}
 
 		//-----------------------------------------------------------------------------------

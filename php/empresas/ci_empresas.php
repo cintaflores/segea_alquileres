@@ -4,15 +4,6 @@ require_once ('adebug.php');
 
 class ci_empresas extends SeGeA_2_ci
 {
-
-  //-----------------------------------------------------------------------------------
-  //---- Variables --------------------------------------------------------------------
-  //-----------------------------------------------------------------------------------
-
-  protected $s__datos;
-  protected $sql_state;
-
-
   //-----------------------------------------------------------------------------------
   //---- Configuraciones --------------------------------------------------------------
   //-----------------------------------------------------------------------------------
@@ -28,13 +19,8 @@ class ci_empresas extends SeGeA_2_ci
   //---- Cuadro -----------------------------------------------------------------------
   //-----------------------------------------------------------------------------------
   function conf__cuadro($cuadro) {
-    if (isset($this->s__datos_filtro)){
-      $filtro = $this->dep('filtro');
-      $filtro->set_datos($this->s__datos_filtro);
-      $sql_where = $filtro->get_sql_where();
-      $datos = dao_empresas::get_datos($sql_where);
+      $datos = dao_empresas::get_datos();
       $cuadro->set_datos($datos);
-    }
   }
     function evt__cuadro__seleccion($seleccion)
     {
@@ -67,7 +53,6 @@ class ci_empresas extends SeGeA_2_ci
     	{
     		try {
     			$this->cn()->sincronizar();
-    			$this->cn()->resetear();
     			$this->evt__cancelar();
 
     		} catch (toba_error_db $e) {

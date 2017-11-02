@@ -73,7 +73,7 @@ class cn_propiedades extends SeGeA_2_cn
 					return $datos;
 				}
 
-			function get_blob($datos, $id_fila)
+			 public function get_blob($datos, $id_fila)
 				{
 						$html_imagen = null;
 
