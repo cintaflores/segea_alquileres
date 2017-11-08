@@ -86,6 +86,18 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
+	'13000411', --dep_id
+	'13000489', --objeto_consumidor
+	'13000510', --objeto_proveedor
+	'form_ml_boletas', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
 	'13000396', --dep_id
 	'13000489', --objeto_consumidor
 	'13000494', --objeto_proveedor
@@ -216,4 +228,11 @@ INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id)
 	'13000489', --objeto_ci
 	'0', --orden
 	'13000396'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000147', --pantalla
+	'13000489', --objeto_ci
+	'1', --orden
+	'13000411'  --dep_id
 );

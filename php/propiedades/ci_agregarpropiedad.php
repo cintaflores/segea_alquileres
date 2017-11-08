@@ -101,21 +101,47 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		}
 		}
 
-      function setear_todos_los_formularios()
-      	{
-      		if (isset($this->s__datos['form'])) {
-      			$this->cn()->set_propiedad($this->s__datos['form']);
-      		}
-      		if (isset ($this->s__datos['form_ml_fotos'])){
-      			$this->cn()->procesar_filas_fotos($this->s__datos['form_ml_fotos']);
+
+			//-----------------------------------------------------------------------------------
+			//---- form_ml_boletas-------------------------------------------------------------------------
+			//-----------------------------------------------------------------------------------
+			function evt__form_ml_boletas__modificacion($datos)
+			{
+			$this->s__datos['form_ml_boletas'] = $datos;
+			//	$this->cn()->procesar_filas_boletas($datos);
+			}
+
+			function conf__form_ml_boletas(SeGeA_2_ei_formulario_ml $form_ml)
+			{
+			if (isset($this->s__datos['form_ml_boletas'])){
+				$form_ml->set_datos($this->s__datos['form_ml_boletas']);
+			} else {
+				if($this->cn()->hay_cursor()) {
+				$datos = $this->cn()->get_boletas();
+				$this->s__datos['form_ml_boletas'] = $datos;
+				$form_ml->set_datos($datos);
+				}
+			}
+			}
+
+		  function setear_todos_los_formularios()
+		  	{
+		    	if (isset($this->s__datos['form'])) {
+		      	$this->cn()->set_propiedad($this->s__datos['form']);
+		    	}
+		    	if (isset ($this->s__datos['form_ml_fotos'])){
+		      	$this->cn()->procesar_filas_fotos($this->s__datos['form_ml_fotos']);
 						$this->cn()->set_blobs($this->s__datos['form_ml_fotos']);
-      		}
+		      }
 					if (isset ($this->s__datos['form_ml_domicilios'])){
-      			$this->cn()->procesar_filas_domicilios($this->s__datos['form_ml_domicilios']);
-      		}
+		      	$this->cn()->procesar_filas_domicilios($this->s__datos['form_ml_domicilios']);
+		    	}
 					if (isset ($this->s__datos['form_ml_caracteristicas'])){
-      			$this->cn()->procesar_filas_caracteristicas($this->s__datos['form_ml_caracteristicas']);
-      		}
-        }
+		      	$this->cn()->procesar_filas_caracteristicas($this->s__datos['form_ml_caracteristicas']);
+		    	}
+					if (isset ($this->s__datos['form_ml_boletas'])){
+		      	$this->cn()->procesar_filas_boletas($this->s__datos['form_ml_boletas']);
+		    	}
+		    }
 }
 ?>
