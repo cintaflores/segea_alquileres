@@ -42,11 +42,5 @@ class ci_agregarreserva extends SeGeA_2_ci
           $form->set_datos($datos);
     		}
     	}
-
-
-
-
-
-
 }
 ?>

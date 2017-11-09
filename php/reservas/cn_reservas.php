@@ -74,12 +74,12 @@ class cn_reservas extends SeGeA_2_cn
 	//-----------------------------------------------------------------------------------
 	function procesar_filas_reservas($datos)
 	{
-		$this->dep('dr_propiedad')->tabla('dt_reserva')->procesar_filas($datos);
+		$this->dep('dr_reserva')->tabla('dt_propiedades')->procesar_filas($datos);
 	}
 
 	function get_reservas()
 	{
-		$datos = $this->dep('dr_propiedad')->tabla('dt_reserva')->get_filas();
+		$datos = $this->dep('dr_reserva')->tabla('dt_propiedades')->get_filas();
 		return $datos;
 	}
 

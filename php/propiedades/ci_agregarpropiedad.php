@@ -33,8 +33,8 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 
 		function evt__form_ml_fotos__modificacion($datos)
 			{
-				// $anterior = $this->s__datos['form_ml_fotos'];
-				// foreach ($anterior as $keya => $valuea) {
+			//	$anterior = $this->s__datos['form_ml_fotos'];
+			//	foreach ($anterior as $keya => $valuea) {
 					foreach ($datos as $keyd => $valued) {
 						if (isset($valuea['id_imagen'])){
 							if (isset($valued['id_imagen'])){
@@ -48,7 +48,7 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 							}
 						}
 					}
-				// }
+			//	}
 				$this->s__datos['form_ml_fotos'] = $datos;
 			}
 
@@ -144,4 +144,5 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		    	}
 		    }
 }
+
 ?>
