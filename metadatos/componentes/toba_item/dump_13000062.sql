@@ -64,3 +64,11 @@ INSERT INTO apex_item_objeto (item_id, proyecto, item, objeto, orden, inicializa
 	'0', --orden
 	NULL  --inicializar
 );
+INSERT INTO apex_item_objeto (item_id, proyecto, item, objeto, orden, inicializar) VALUES (
+	NULL, --item_id
+	'SeGeA_2', --proyecto
+	'13000062', --item
+	'13000516', --objeto
+	'0', --orden
+	NULL  --inicializar
+);
