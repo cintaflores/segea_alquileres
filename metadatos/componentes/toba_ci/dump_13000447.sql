@@ -52,7 +52,7 @@ INSERT INTO apex_objeto_mt_me (objeto_mt_me_proyecto, objeto_mt_me, ev_procesar_
 	NULL, --ancho
 	NULL, --alto
 	NULL, --posicion_botonera
-	NULL, --tipo_navegacion
+	'tab_h', --tipo_navegacion
 	'0', --botonera_barra_item
 	'0', --con_toc
 	NULL, --incremental
@@ -74,10 +74,58 @@ INSERT INTO apex_objeto_mt_me (objeto_mt_me_proyecto, objeto_mt_me, ev_procesar_
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
+	'13000429', --dep_id
+	'13000447', --objeto_consumidor
+	'13000529', --objeto_proveedor
+	'form_concepto_de_cobros', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
 	'13000421', --dep_id
 	'13000447', --objeto_consumidor
 	'13000521', --objeto_proveedor
 	'form_cuotas', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
+	'13000431', --dep_id
+	'13000447', --objeto_consumidor
+	'13000531', --objeto_proveedor
+	'form_ml_detalle_de_pago', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
+	'13000432', --dep_id
+	'13000447', --objeto_consumidor
+	'13000532', --objeto_proveedor
+	'form_ml_formas_de_pago', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
+	'13000430', --dep_id
+	'13000447', --objeto_consumidor
+	'13000530', --objeto_proveedor
+	'form_pagos', --identificador
 	NULL, --parametros_a
 	NULL, --parametros_b
 	NULL, --parametros_c
@@ -97,7 +145,7 @@ INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, id
 	'13000128', --pantalla
 	'pant_uno', --identificador
 	'1', --orden
-	'Pantalla Inicial', --etiqueta
+	'Cuotas', --etiqueta
 	NULL, --descripcion
 	NULL, --tip
 	'apex', --imagen_recurso_origen
@@ -116,7 +164,7 @@ INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, id
 	'13000129', --pantalla
 	'pant_dos', --identificador
 	'2', --orden
-	'Pantalla Edicion', --etiqueta
+	'Pagos', --etiqueta
 	NULL, --descripcion
 	NULL, --tip
 	'apex', --imagen_recurso_origen
@@ -135,7 +183,7 @@ INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, id
 	'13000130', --pantalla
 	'pant_tres', --identificador
 	'3', --orden
-	'Pago', --etiqueta
+	'Formas de Pago', --etiqueta
 	NULL, --descripcion
 	NULL, --tip
 	'apex', --imagen_recurso_origen
@@ -159,4 +207,32 @@ INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id)
 	'13000447', --objeto_ci
 	'0', --orden
 	'13000421'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000128', --pantalla
+	'13000447', --objeto_ci
+	'1', --orden
+	'13000429'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000129', --pantalla
+	'13000447', --objeto_ci
+	'0', --orden
+	'13000430'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000129', --pantalla
+	'13000447', --objeto_ci
+	'1', --orden
+	'13000431'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000130', --pantalla
+	'13000447', --objeto_ci
+	'0', --orden
+	'13000432'  --dep_id
 );
