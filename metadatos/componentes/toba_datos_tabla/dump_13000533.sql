@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[13000321]--  - dr_persona - dt_correos_electronicos 
+--[13000533]--  DT - correos_electronicos 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -9,18 +9,18 @@
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, clase_proyecto, clase, punto_montaje, subclase, subclase_archivo, objeto_categoria_proyecto, objeto_categoria, nombre, titulo, colapsable, descripcion, fuente_datos_proyecto, fuente_datos, solicitud_registrar, solicitud_obj_obs_tipo, solicitud_obj_observacion, parametro_a, parametro_b, parametro_c, parametro_d, parametro_e, parametro_f, usuario, creacion, posicion_botonera) VALUES (
 	'SeGeA_2', --proyecto
-	'13000321', --objeto
+	'13000533', --objeto
 	NULL, --anterior
 	NULL, --identificador
 	NULL, --reflexivo
 	'toba', --clase_proyecto
 	'toba_datos_tabla', --clase
 	'13000008', --punto_montaje
-	'dt_correos_electronicos', --subclase
-	'datos/dt_correos_electronicos.php', --subclase_archivo
+	NULL, --subclase
+	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'- dr_persona - dt_correos_electronicos', --nombre
+	'DT - correos_electronicos', --nombre
 	NULL, --titulo
 	NULL, --colapsable
 	NULL, --descripcion
@@ -36,7 +36,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --parametro_e
 	NULL, --parametro_f
 	NULL, --usuario
-	'2017-05-22 20:39:22', --creacion
+	'2017-11-15 16:49:34', --creacion
 	NULL  --posicion_botonera
 );
 --- FIN Grupo de desarrollo 13
@@ -46,7 +46,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 ------------------------------------------------------------
 INSERT INTO apex_objeto_db_registros (objeto_proyecto, objeto, max_registros, min_registros, punto_montaje, ap, ap_clase, ap_archivo, tabla, tabla_ext, alias, modificar_claves, fuente_datos_proyecto, fuente_datos, permite_actualizacion_automatica, esquema, esquema_ext) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000321', --objeto
+	'13000533', --objeto
 	NULL, --max_registros
 	NULL, --min_registros
 	'13000008', --punto_montaje
@@ -71,8 +71,8 @@ INSERT INTO apex_objeto_db_registros (objeto_proyecto, objeto, max_registros, mi
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000321', --objeto
-	'13000281', --col_id
+	'13000533', --objeto
+	'13000565', --col_id
 	'id_correo_electronico', --columna
 	'E', --tipo
 	'1', --pk
@@ -85,8 +85,8 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000321', --objeto
-	'13000282', --col_id
+	'13000533', --objeto
+	'13000566', --col_id
 	'nombre_correo_electronico', --columna
 	'C', --tipo
 	'0', --pk
@@ -99,8 +99,8 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000321', --objeto
-	'13000283', --col_id
+	'13000533', --objeto
+	'13000567', --col_id
 	'id_persona', --columna
 	'E', --tipo
 	'0', --pk
@@ -113,8 +113,8 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000321', --objeto
-	'13000284', --col_id
+	'13000533', --objeto
+	'13000568', --col_id
 	'id_tipo_correo_electronico', --columna
 	'E', --tipo
 	'0', --pk
@@ -123,20 +123,6 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 	NULL, --no_nulo
 	'1', --no_nulo_db
 	'0', --externa
-	'correos_electronicos'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'SeGeA_2', --objeto_proyecto
-	'13000321', --objeto
-	'13000451', --col_id
-	'id_empresa', --columna
-	'E', --tipo
-	'0', --pk
-	'', --secuencia
-	NULL, --largo
-	NULL, --no_nulo
-	'1', --no_nulo_db
-	NULL, --externa
 	'correos_electronicos'  --tabla
 );
 --- FIN Grupo de desarrollo 13
