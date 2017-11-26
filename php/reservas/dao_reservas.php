@@ -11,7 +11,6 @@ class dao_reservas
       $where_armado="";
     }
       $sql = "SELECT
-              t_c.id_contrato,
               t_c.fecha_inicio,
               t_c.fecha_fin,
               t_c.cantidad,

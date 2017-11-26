@@ -73,7 +73,7 @@ class cn_propiedades extends SeGeA_2_cn
 					return $datos;
 				}
 
-			 public function get_blob($datos, $id_fila)
+				function get_blob($datos, $id_fila)
 				{
 						$html_imagen = null;
 
@@ -84,7 +84,6 @@ class cn_propiedades extends SeGeA_2_cn
 							$temp_imagen = fopen($temp_archivo['path'], 'w');
 							stream_copy_to_stream($imagen, $temp_imagen);
 							fclose($temp_imagen);
-							fclose($imagen);
 							$tamano = round(filesize($temp_archivo['path']) / 1024);
 							$html_imagen =
 							"<img width=\"24px\" src='{$temp_archivo['url']}' alt='' />";
@@ -102,9 +101,17 @@ class cn_propiedades extends SeGeA_2_cn
 				{
 						$datos_r = array();
 						foreach ($datos as $key => $value) {
-						$datos_r[$key] = $this->get_blob($datos[$key], $key);
+							if(isset($value['x_dbr_clave'])){
+								$datos_r[$key] = $this->get_blob($value, $value['x_dbr_clave']);
+							}
 						}
 						return $datos_r;
+
+						// $datos_r = array();
+						// foreach ($datos as $key => $value) {
+						// 	$datos_r[$key] = $this->get_blob($datos[$key], $key);
+						// }
+						// return $datos_r;
 				}
 
 			function set_blobs($datos)

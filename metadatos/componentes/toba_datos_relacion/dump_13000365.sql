@@ -146,15 +146,6 @@ INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador
 INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
 	'SeGeA_2', --proyecto
 	'13000365', --objeto
-	'13000013', --asoc_id
-	'13000366', --padre_objeto
-	'13000345', --padre_clave
-	'13000406', --hijo_objeto
-	'13000395'  --hijo_clave
-);
-INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
-	'SeGeA_2', --proyecto
-	'13000365', --objeto
 	'13000014', --asoc_id
 	'13000366', --padre_objeto
 	'13000345', --padre_clave

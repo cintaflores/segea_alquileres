@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[13000072]--  caracteristicas_popup 
+--[13000073]--  unidades_popup 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -10,7 +10,7 @@
 INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre, carpeta, nivel_acceso, solicitud_tipo, pagina_tipo_proyecto, pagina_tipo, actividad_buffer_proyecto, actividad_buffer, actividad_patron_proyecto, actividad_patron, nombre, descripcion, punto_montaje, actividad_accion, menu, orden, solicitud_registrar, solicitud_obs_tipo_proyecto, solicitud_obs_tipo, solicitud_observacion, solicitud_registrar_cron, prueba_directorios, zona_proyecto, zona, zona_orden, zona_listar, imagen_recurso_origen, imagen, parametro_a, parametro_b, parametro_c, publico, redirecciona, usuario, exportable, creacion, retrasar_headers) VALUES (
 	NULL, --item_id
 	'SeGeA_2', --proyecto
-	'13000072', --item
+	'13000073', --item
 	NULL, --padre_id
 	'SeGeA_2', --padre_proyecto
 	'13000039', --padre
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'caracteristicas_popup', --nombre
+	'unidades_popup', --nombre
 	NULL, --descripcion
 	'13000008', --punto_montaje
 	NULL, --actividad_accion
@@ -48,7 +48,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --redirecciona
 	NULL, --usuario
 	'0', --exportable
-	'2017-10-29 19:09:43', --creacion
+	'2017-11-15 22:23:46', --creacion
 	'0'  --retrasar_headers
 );
 --- FIN Grupo de desarrollo 13
@@ -59,8 +59,8 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 INSERT INTO apex_item_objeto (item_id, proyecto, item, objeto, orden, inicializar) VALUES (
 	NULL, --item_id
 	'SeGeA_2', --proyecto
-	'13000072', --item
-	'13000503', --objeto
+	'13000073', --item
+	'13000537', --objeto
 	'0', --orden
 	NULL  --inicializar
 );

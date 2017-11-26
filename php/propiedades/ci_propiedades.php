@@ -90,7 +90,7 @@ class ci_propiedades extends SeGeA_2_ci
 
 	function evt__procesar()
 	{
-		$this->dep('ci_agregarpropiedad')->setear_todos_los_formularios();
+	//	$this->dep('ci_agregarpropiedad')->setear_todos_los_formularios();
 		try {
       $this->cn()->sincronizar();
       $this->cn()->resetear();
@@ -106,7 +106,7 @@ class ci_propiedades extends SeGeA_2_ci
 					throw new toba_error_usuario('La Propiedad que intenta ingresar, ya existe');
 				}
 			}
-    $this->cn()->resetear();
+    //$this->cn()->resetear();
 		}
 	}
 

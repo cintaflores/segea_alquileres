@@ -16,8 +16,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_datos_tabla', --clase
 	'13000008', --punto_montaje
-	NULL, --subclase
-	NULL, --subclase_archivo
+	'dt_tipos_propiedades', --subclase
+	'datos/dt_tipos_propiedades.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'DT - tipos_propiedades', --nombre
@@ -92,6 +92,20 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 	'0', --pk
 	'', --secuencia
 	'20', --largo
+	NULL, --no_nulo
+	'1', --no_nulo_db
+	NULL, --externa
+	'tipos_propiedades'  --tabla
+);
+INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
+	'SeGeA_2', --objeto_proyecto
+	'13000355', --objeto
+	'13000569', --col_id
+	'descripcion', --columna
+	'C', --tipo
+	'0', --pk
+	'', --secuencia
+	'50', --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
 	NULL, --externa

@@ -1,28 +1,27 @@
 <?php
-require_once('caracteristicas_popup/dao_caracteristicas_popup.php');
-class ci_caracteristicas_popup extends toba_ci
+require_once('unidades_popup/dao_unidades_popup.php');
+class ci_unidades_popup extends toba_ci
 {
+	//---- Variables --------------------------------------------------------------------
+
+
+  protected $s__datos;
+  protected $sql_state;
+  protected $s__datos_filtro;
+
 	//---- Cuadro -----------------------------------------------------------------------
 
 	function conf__cuadro(toba_ei_cuadro $cuadro)
 	{
-		$cuadro->desactivar_modo_clave_segura();
+    $cuadro->desactivar_modo_clave_segura();
 		if (isset($this->s__datos_filtro)){
       $filtro = $this->dep('filtro');
       $filtro->set_datos($this->s__datos_filtro);
       $sql_where = $filtro->get_sql_where();
-      $datos = dao_caracteristicas_popup::get_datos($sql_where);
+      $datos = dao_unidades_popup::get_datos($sql_where);
       $cuadro->set_datos($datos);
     }
-		//$cuadro->set_datos($this->dep('datos')->tabla('caracteristicas')->get_listado());
-	}
-
-	function evt__cuadro__eliminar($datos)
-	{
-		$this->dep('datos')->resetear();
-		$this->dep('datos')->cargar($datos);
-		$this->dep('datos')->eliminar_todo();
-		$this->dep('datos')->resetear();
+		//$cuadro->set_datos($this->dep('datos')->tabla('propiedades')->get_listado());
 	}
 
 	function evt__cuadro__seleccion($datos)
@@ -32,6 +31,7 @@ class ci_caracteristicas_popup extends toba_ci
 	}
 
 	//---- Filtro -----------------------------------------------------------------------
+
 
 	function conf__filtro($filtro)
 	{
@@ -55,7 +55,7 @@ class ci_caracteristicas_popup extends toba_ci
 	function conf__formulario(toba_ei_formulario $form)
 	{
 		if ($this->dep('datos')->esta_cargada()) {
-			$form->set_datos($this->dep('datos')->tabla('caracteristicas')->get());
+			$form->set_datos($this->dep('datos')->tabla('propiedades')->get());
 		} else {
 			$this->pantalla()->eliminar_evento('eliminar');
 		}
@@ -63,7 +63,7 @@ class ci_caracteristicas_popup extends toba_ci
 
 	function evt__formulario__modificacion($datos)
 	{
-		$this->dep('datos')->tabla('caracteristicas')->set($datos);
+		$this->dep('datos')->tabla('propiedades')->set($datos);
 	}
 
 	function resetear()
