@@ -1,6 +1,6 @@
 <?php
 
-class dao_domicilios_popup
+class dao_unidades_popup
 {
   static function get_datos($where='')
   {

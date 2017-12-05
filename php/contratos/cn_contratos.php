@@ -83,5 +83,18 @@ class cn_contratos extends SeGeA_2_cn
 		return $datos;
 	}
 
+	//-----------------------------------------------------------------------------------
+	//---- dt_cuotas ----------------------------------------------------------
+	//-----------------------------------------------------------------------------------
+	function procesar_filas_cuotas($datos)
+	{
+		$this->dep('dr_contrato')->tabla('dt_cuotas')->procesar_filas($datos);
+	}
+
+	function get_cuotas()
+	{
+		$datos = $this->dep('dr_contrato')->tabla('dt_cuotas')->get_filas();
+		return $datos;
+	}
 }
 ?>

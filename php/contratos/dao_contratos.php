@@ -54,5 +54,17 @@ class dao_contratos
     return $opciones;
   }
 
+  static function get_opcionesPeriodos()
+  {
+    $sql = " SELECT
+                    id_periodo,
+                    nombre_periodo
+              FROM periodos
+              ORDER BY nombre_periodo";
+
+    $opciones = consultar_fuente($sql);
+    return $opciones;
+  }
+
 }
 ?>

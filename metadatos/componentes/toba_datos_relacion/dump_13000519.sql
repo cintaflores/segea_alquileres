@@ -77,18 +77,6 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
-	'13000420', --dep_id
-	'13000519', --objeto_consumidor
-	'13000520', --objeto_proveedor
-	'dt_cuotas', --identificador
-	'', --parametros_a
-	'', --parametros_b
-	NULL, --parametros_c
-	NULL, --inicializar
-	NULL  --orden
-);
-INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
-	'SeGeA_2', --proyecto
 	'13000425', --dep_id
 	'13000519', --objeto_consumidor
 	'13000525', --objeto_proveedor
@@ -145,22 +133,6 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
 	'SeGeA_2', --proyecto
 	'13000519', --objeto
-	'13000033', --asoc_id
-	NULL, --identificador
-	'SeGeA_2', --padre_proyecto
-	'13000520', --padre_objeto
-	'dt_cuotas', --padre_id
-	NULL, --padre_clave
-	'SeGeA_2', --hijo_proyecto
-	'13000525', --hijo_objeto
-	'dt_detalle_de_pago', --hijo_id
-	NULL, --hijo_clave
-	NULL, --cascada
-	'1'  --orden
-);
-INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
-	'SeGeA_2', --proyecto
-	'13000519', --objeto
 	'13000034', --asoc_id
 	NULL, --identificador
 	'SeGeA_2', --padre_proyecto
@@ -173,22 +145,6 @@ INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador
 	NULL, --hijo_clave
 	NULL, --cascada
 	'2'  --orden
-);
-INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
-	'SeGeA_2', --proyecto
-	'13000519', --objeto
-	'13000035', --asoc_id
-	NULL, --identificador
-	'SeGeA_2', --padre_proyecto
-	'13000528', --padre_objeto
-	'dt_conceptos_de_cobros', --padre_id
-	NULL, --padre_clave
-	'SeGeA_2', --hijo_proyecto
-	'13000520', --hijo_objeto
-	'dt_cuotas', --hijo_id
-	NULL, --hijo_clave
-	NULL, --cascada
-	'3'  --orden
 );
 INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
 	'SeGeA_2', --proyecto
@@ -230,29 +186,11 @@ INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador
 INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
 	'SeGeA_2', --proyecto
 	'13000519', --objeto
-	'13000033', --asoc_id
-	'13000520', --padre_objeto
-	'13000530', --padre_clave
-	'13000525', --hijo_objeto
-	'13000547'  --hijo_clave
-);
-INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
-	'SeGeA_2', --proyecto
-	'13000519', --objeto
 	'13000034', --asoc_id
 	'13000524', --padre_objeto
 	'13000540', --padre_clave
 	'13000525', --hijo_objeto
 	'13000543'  --hijo_clave
-);
-INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
-	'SeGeA_2', --proyecto
-	'13000519', --objeto
-	'13000035', --asoc_id
-	'13000528', --padre_objeto
-	'13000561', --padre_clave
-	'13000520', --hijo_objeto
-	'13000534'  --hijo_clave
 );
 INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
 	'SeGeA_2', --proyecto
