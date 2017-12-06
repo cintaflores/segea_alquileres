@@ -1,6 +1,6 @@
 <?php
 
-class dao_unidades_popup
+class dao_alquileres_popup
 {
   static function get_datos($where='')
   {
@@ -16,7 +16,7 @@ class dao_unidades_popup
 	               ttp.nombre_tipo_propiedad
 	                from propiedades tp
 	                inner join tipos_propiedades ttp on tp.id_tipo_propiedad=ttp.id_tipo_propiedad
-                  and ttp.nombre_tipo_propiedad = 'UNIDADES'
+                  and ttp.nombre_tipo_propiedad = 'ALQUILERES'
                 $where_armado";
       $datos = consultar_fuente($sql);
       return $datos;

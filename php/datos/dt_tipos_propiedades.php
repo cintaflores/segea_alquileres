@@ -10,5 +10,6 @@ class dt_tipos_propiedades extends toba_datos_tabla
 
 
 
+
 }
 ?>

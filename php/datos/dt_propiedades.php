@@ -17,6 +17,6 @@ class dt_propiedades extends toba_datos_tabla
 		return toba::db('SeGeA_2')->consultar($sql);
 	}
 
-}
 
+}
 ?>
