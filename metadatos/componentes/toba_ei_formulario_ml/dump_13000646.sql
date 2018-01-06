@@ -378,7 +378,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'id_concepto_de_cobro', --identificador
 	'ef_oculto', --elemento_formulario
 	'id_concepto_de_cobro', --columnas
-	'1', --obligatorio
+	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'6', --orden
 	'Id concepto de cobro', --etiqueta
@@ -618,7 +618,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'id_descuento', --identificador
 	'ef_oculto', --elemento_formulario
 	'id_descuento', --columnas
-	'1', --obligatorio
+	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'8', --orden
 	'Id descuento', --etiqueta
@@ -698,7 +698,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'monto_descuento', --identificador
 	'ef_editable_moneda', --elemento_formulario
 	'monto_descuento', --columnas
-	'1', --obligatorio
+	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'9', --orden
 	'Monto descuento', --etiqueta

@@ -99,6 +99,13 @@ class ci_agregarcontrato extends SeGeA_2_ci
 
 	function evt__form_ml_cuotas__modificacion($datos)
 	{
+    foreach ($datos as $key => $value) {
+    $datos[$key]['apex_ei_analisis_fila'] = 'A';
+    }
+    $this->cn()->procesar_filas_cuotas($datos);
+    $datos = $this->cn()->get_cuotas();
+
+    $this->s__datos['form_ml_cuotas'] = $datos;
 	}
 
 }

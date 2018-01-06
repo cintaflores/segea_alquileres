@@ -123,7 +123,7 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	NULL, --confirmacion
 	NULL, --estilo
 	'apex', --imagen_recurso_origen
-	NULL, --imagen
+	'nucleo/agregar.gif', --imagen
 	'1', --en_botonera
 	NULL, --ayuda
 	'3', --orden
@@ -322,18 +322,6 @@ INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id)
 ------------------------------------------------------------
 -- apex_eventos_pantalla
 ------------------------------------------------------------
-INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
-	'13000143', --pantalla
-	'13000481', --objeto_ci
-	'13000489', --evento_id
-	'SeGeA_2'  --proyecto
-);
-INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
-	'13000143', --pantalla
-	'13000481', --objeto_ci
-	'13000490', --evento_id
-	'SeGeA_2'  --proyecto
-);
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000143', --pantalla
 	'13000481', --objeto_ci

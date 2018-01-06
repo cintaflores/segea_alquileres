@@ -24,6 +24,28 @@ class dao_contratos
       return $datos;
   }
 
+  static function get_descPopUpPropiedad($id_propiedad)
+  {
+    $id_propiedad = quote($id_propiedad);
+
+    $sql = " SELECT
+               tp.id_propiedad,
+               tp.nombre_propiedad nombre_propiedad,
+               ttp.nombre_tipo_propiedad
+                from propiedades tp, tipos_propiedades ttp
+                where tp.id_tipo_propiedad=ttp.id_tipo_propiedad
+                and ttp.nombre_tipo_propiedad = 'ALQUILERES'
+             and id_propiedad = $id_propiedad";
+
+    $resultado = consultar_fuente($sql);
+
+    if (count($resultado) > 0) {
+      return $resultado[0]['nombre_propiedad'];
+    } else {
+      return 'Falló, intente nuevamente';
+    }
+  }
+
   static function get_descPopUpPersona($id_persona)
   {
     $id_persona = quote($id_persona);

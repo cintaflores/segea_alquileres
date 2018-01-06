@@ -72,7 +72,7 @@ INSERT INTO apex_objeto_db_registros (objeto_proyecto, objeto, max_registros, mi
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000513', --objeto
-	'13000508', --col_id
+	'13000696', --col_id
 	'id_reserva', --columna
 	'E', --tipo
 	'1', --pk
@@ -80,41 +80,41 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	NULL, --externa
+	'0', --externa
 	'reservas'  --tabla
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000513', --objeto
-	'13000509', --col_id
-	'fecha_reserva_de', --columna
+	'13000697', --col_id
+	'fecha_inicio', --columna
 	'F', --tipo
 	'0', --pk
 	'', --secuencia
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	NULL, --externa
+	'0', --externa
 	'reservas'  --tabla
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000513', --objeto
-	'13000510', --col_id
-	'fecha_reserva_hasta', --columna
+	'13000698', --col_id
+	'fecha_fin', --columna
 	'F', --tipo
 	'0', --pk
 	'', --secuencia
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	NULL, --externa
+	'0', --externa
 	'reservas'  --tabla
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000513', --objeto
-	'13000511', --col_id
+	'13000699', --col_id
 	'precio', --columna
 	'E', --tipo
 	'0', --pk
@@ -122,27 +122,13 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	NULL, --externa
+	'0', --externa
 	'reservas'  --tabla
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000513', --objeto
-	'13000512', --col_id
-	'cantidad_personas', --columna
-	'E', --tipo
-	'0', --pk
-	'', --secuencia
-	NULL, --largo
-	NULL, --no_nulo
-	'1', --no_nulo_db
-	NULL, --externa
-	'reservas'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'SeGeA_2', --objeto_proyecto
-	'13000513', --objeto
-	'13000513', --col_id
+	'13000700', --col_id
 	'fecha_confirmacion', --columna
 	'F', --tipo
 	'0', --pk
@@ -150,41 +136,13 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	NULL, --externa
+	'0', --externa
 	'reservas'  --tabla
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000513', --objeto
-	'13000514', --col_id
-	'id_rol', --columna
-	'E', --tipo
-	'0', --pk
-	'', --secuencia
-	NULL, --largo
-	NULL, --no_nulo
-	'1', --no_nulo_db
-	NULL, --externa
-	'reservas'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'SeGeA_2', --objeto_proyecto
-	'13000513', --objeto
-	'13000515', --col_id
-	'id_persona', --columna
-	'E', --tipo
-	'0', --pk
-	'', --secuencia
-	NULL, --largo
-	NULL, --no_nulo
-	'1', --no_nulo_db
-	NULL, --externa
-	'reservas'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'SeGeA_2', --objeto_proyecto
-	'13000513', --objeto
-	'13000516', --col_id
+	'13000701', --col_id
 	'id_propiedad', --columna
 	'E', --tipo
 	'0', --pk
@@ -192,7 +150,7 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	NULL, --externa
+	'0', --externa
 	'reservas'  --tabla
 );
 --- FIN Grupo de desarrollo 13

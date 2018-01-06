@@ -48,7 +48,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, etiqueta, maneja_datos, sobre_fila, confirmacion, estilo, imagen_recurso_origen, imagen, en_botonera, ayuda, orden, ci_predep, implicito, defecto, display_datos_cargados, grupo, accion, accion_imphtml_debug, accion_vinculo_carpeta, accion_vinculo_item, accion_vinculo_objeto, accion_vinculo_popup, accion_vinculo_popup_param, accion_vinculo_target, accion_vinculo_celda, accion_vinculo_servicio, es_seleccion_multiple, es_autovinculo) VALUES (
 	'SeGeA_2', --proyecto
-	'13000536', --evento_id
+	'13000659', --evento_id
 	'13000489', --objeto
 	'procesar', --identificador
 	'&Guardar', --etiqueta
@@ -81,7 +81,7 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 );
 INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, etiqueta, maneja_datos, sobre_fila, confirmacion, estilo, imagen_recurso_origen, imagen, en_botonera, ayuda, orden, ci_predep, implicito, defecto, display_datos_cargados, grupo, accion, accion_imphtml_debug, accion_vinculo_carpeta, accion_vinculo_item, accion_vinculo_objeto, accion_vinculo_popup, accion_vinculo_popup_param, accion_vinculo_target, accion_vinculo_celda, accion_vinculo_servicio, es_seleccion_multiple, es_autovinculo) VALUES (
 	'SeGeA_2', --proyecto
-	'13000537', --evento_id
+	'13000660', --evento_id
 	'13000489', --objeto
 	'cancelar', --identificador
 	'&Cancelar', --etiqueta
@@ -316,36 +316,36 @@ INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id)
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000145', --pantalla
 	'13000489', --objeto_ci
-	'13000536', --evento_id
+	'13000659', --evento_id
 	'SeGeA_2'  --proyecto
 );
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000145', --pantalla
 	'13000489', --objeto_ci
-	'13000537', --evento_id
+	'13000660', --evento_id
 	'SeGeA_2'  --proyecto
 );
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000146', --pantalla
 	'13000489', --objeto_ci
-	'13000536', --evento_id
+	'13000659', --evento_id
 	'SeGeA_2'  --proyecto
 );
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000146', --pantalla
 	'13000489', --objeto_ci
-	'13000537', --evento_id
+	'13000660', --evento_id
 	'SeGeA_2'  --proyecto
 );
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000147', --pantalla
 	'13000489', --objeto_ci
-	'13000536', --evento_id
+	'13000659', --evento_id
 	'SeGeA_2'  --proyecto
 );
 INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
 	'13000147', --pantalla
 	'13000489', --objeto_ci
-	'13000537', --evento_id
+	'13000660', --evento_id
 	'SeGeA_2'  --proyecto
 );
