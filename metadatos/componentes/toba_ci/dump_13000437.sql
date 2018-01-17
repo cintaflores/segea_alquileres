@@ -118,7 +118,7 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	'13000437', --objeto
 	'agregar', --identificador
 	'&Agregar', --etiqueta
-	'1', --maneja_datos
+	'0', --maneja_datos
 	NULL, --sobre_fila
 	NULL, --confirmacion
 	NULL, --estilo
@@ -151,13 +151,13 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	'13000437', --objeto
 	'eliminar', --identificador
 	'&Eliminar', --etiqueta
-	'1', --maneja_datos
+	'0', --maneja_datos
 	NULL, --sobre_fila
 	NULL, --confirmacion
 	NULL, --estilo
 	'apex', --imagen_recurso_origen
 	NULL, --imagen
-	'0', --en_botonera
+	'1', --en_botonera
 	NULL, --ayuda
 	'4', --orden
 	NULL, --ci_predep
@@ -326,5 +326,23 @@ INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VAL
 	'13000121', --pantalla
 	'13000437', --objeto_ci
 	'13000516', --evento_id
+	'SeGeA_2'  --proyecto
+);
+INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
+	'13000122', --pantalla
+	'13000437', --objeto_ci
+	'13000445', --evento_id
+	'SeGeA_2'  --proyecto
+);
+INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
+	'13000122', --pantalla
+	'13000437', --objeto_ci
+	'13000446', --evento_id
+	'SeGeA_2'  --proyecto
+);
+INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
+	'13000122', --pantalla
+	'13000437', --objeto_ci
+	'13000517', --evento_id
 	'SeGeA_2'  --proyecto
 );

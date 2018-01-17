@@ -86,10 +86,10 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
-	'13000539', --dep_id
+	'13000540', --dep_id
 	'13000438', --objeto_consumidor
-	'13000655', --objeto_proveedor
-	'form_calcular', --identificador
+	'13000656', --objeto_proveedor
+	'form_calcula', --identificador
 	NULL, --parametros_a
 	NULL, --parametros_b
 	NULL, --parametros_c
@@ -98,10 +98,34 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'SeGeA_2', --proyecto
-	'13000346', --dep_id
+	'13000543', --dep_id
 	'13000438', --objeto_consumidor
-	'13000443', --objeto_proveedor
+	'13000658', --objeto_proveedor
+	'form_ml_familiares', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
+	'13000545', --dep_id
+	'13000438', --objeto_consumidor
+	'13000660', --objeto_proveedor
 	'form_recomendacion', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'SeGeA_2', --proyecto
+	'13000542', --dep_id
+	'13000438', --objeto_consumidor
+	'13000657', --objeto_proveedor
+	'form_titular', --identificador
 	NULL, --parametros_a
 	NULL, --parametros_b
 	NULL, --parametros_c
@@ -132,7 +156,7 @@ INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, id
 	NULL, --subclase_archivo
 	NULL, --template
 	NULL, --template_impresion
-	NULL  --punto_montaje
+	'13000008'  --punto_montaje
 );
 INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, identificador, orden, etiqueta, descripcion, tip, imagen_recurso_origen, imagen, objetos, eventos, subclase, subclase_archivo, template, template_impresion, punto_montaje) VALUES (
 	'SeGeA_2', --objeto_ci_proyecto
@@ -140,7 +164,7 @@ INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, id
 	'13000124', --pantalla
 	'pant_dos', --identificador
 	'2', --orden
-	'Recomendacion', --etiqueta
+	'Personas', --etiqueta
 	NULL, --descripcion
 	NULL, --tip
 	'apex', --imagen_recurso_origen
@@ -170,7 +194,7 @@ INSERT INTO apex_objeto_ci_pantalla (objeto_ci_proyecto, objeto_ci, pantalla, id
 	NULL, --subclase_archivo
 	NULL, --template
 	NULL, --template_impresion
-	NULL  --punto_montaje
+	'13000008'  --punto_montaje
 );
 --- FIN Grupo de desarrollo 13
 
@@ -189,12 +213,26 @@ INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id)
 	'13000123', --pantalla
 	'13000438', --objeto_ci
 	'1', --orden
-	'13000539'  --dep_id
+	'13000540'  --dep_id
 );
 INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
 	'SeGeA_2', --proyecto
 	'13000124', --pantalla
 	'13000438', --objeto_ci
 	'0', --orden
-	'13000346'  --dep_id
+	'13000542'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000124', --pantalla
+	'13000438', --objeto_ci
+	'1', --orden
+	'13000543'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'SeGeA_2', --proyecto
+	'13000124', --pantalla
+	'13000438', --objeto_ci
+	'2', --orden
+	'13000545'  --dep_id
 );

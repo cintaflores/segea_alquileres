@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[13000654]--  - dr_reserva - dt_detalle_reserva 
+--[13000659]--  DT - recomendaciones 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -9,7 +9,7 @@
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, clase_proyecto, clase, punto_montaje, subclase, subclase_archivo, objeto_categoria_proyecto, objeto_categoria, nombre, titulo, colapsable, descripcion, fuente_datos_proyecto, fuente_datos, solicitud_registrar, solicitud_obj_obs_tipo, solicitud_obj_observacion, parametro_a, parametro_b, parametro_c, parametro_d, parametro_e, parametro_f, usuario, creacion, posicion_botonera) VALUES (
 	'SeGeA_2', --proyecto
-	'13000654', --objeto
+	'13000659', --objeto
 	NULL, --anterior
 	NULL, --identificador
 	NULL, --reflexivo
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'- dr_reserva - dt_detalle_reserva', --nombre
+	'DT - recomendaciones', --nombre
 	NULL, --titulo
 	NULL, --colapsable
 	NULL, --descripcion
@@ -36,7 +36,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --parametro_e
 	NULL, --parametro_f
 	NULL, --usuario
-	'2018-01-05 23:19:20', --creacion
+	'2018-01-13 08:43:34', --creacion
 	NULL  --posicion_botonera
 );
 --- FIN Grupo de desarrollo 13
@@ -46,14 +46,14 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 ------------------------------------------------------------
 INSERT INTO apex_objeto_db_registros (objeto_proyecto, objeto, max_registros, min_registros, punto_montaje, ap, ap_clase, ap_archivo, tabla, tabla_ext, alias, modificar_claves, fuente_datos_proyecto, fuente_datos, permite_actualizacion_automatica, esquema, esquema_ext) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000654', --objeto
+	'13000659', --objeto
 	NULL, --max_registros
 	NULL, --min_registros
 	'13000008', --punto_montaje
 	'1', --ap
 	NULL, --ap_clase
 	NULL, --ap_archivo
-	'detalles_reservas', --tabla
+	'recomendaciones', --tabla
 	NULL, --tabla_ext
 	NULL, --alias
 	'0', --modificar_claves
@@ -71,44 +71,44 @@ INSERT INTO apex_objeto_db_registros (objeto_proyecto, objeto, max_registros, mi
 --- INICIO Grupo de desarrollo 13
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000654', --objeto
-	'13000693', --col_id
-	'id_reserva', --columna
+	'13000659', --objeto
+	'13000704', --col_id
+	'id_recomendacion', --columna
 	'E', --tipo
 	'1', --pk
+	'recomendaciones_id_recomendacion_seq', --secuencia
+	NULL, --largo
+	NULL, --no_nulo
+	'1', --no_nulo_db
+	NULL, --externa
+	'recomendaciones'  --tabla
+);
+INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
+	'SeGeA_2', --objeto_proyecto
+	'13000659', --objeto
+	'13000705', --col_id
+	'recomendado', --columna
+	'L', --tipo
+	'0', --pk
 	'', --secuencia
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	'0', --externa
-	'detalles_reservas'  --tabla
+	NULL, --externa
+	'recomendaciones'  --tabla
 );
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
-	'13000654', --objeto
-	'13000694', --col_id
-	'importe', --columna
+	'13000659', --objeto
+	'13000706', --col_id
+	'id_persona', --columna
 	'E', --tipo
 	'0', --pk
 	'', --secuencia
 	NULL, --largo
 	NULL, --no_nulo
 	'1', --no_nulo_db
-	'0', --externa
-	'detalles_reservas'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'SeGeA_2', --objeto_proyecto
-	'13000654', --objeto
-	'13000695', --col_id
-	'dias', --columna
-	'E', --tipo
-	'0', --pk
-	'', --secuencia
-	NULL, --largo
-	NULL, --no_nulo
-	'1', --no_nulo_db
-	'0', --externa
-	'detalles_reservas'  --tabla
+	NULL, --externa
+	'recomendaciones'  --tabla
 );
 --- FIN Grupo de desarrollo 13

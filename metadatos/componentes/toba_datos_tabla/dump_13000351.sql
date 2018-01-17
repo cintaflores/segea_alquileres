@@ -114,15 +114,15 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'SeGeA_2', --objeto_proyecto
 	'13000351', --objeto
-	'13000456', --col_id
-	'id_persona', --columna
-	'E', --tipo
+	'13000702', --col_id
+	'precio', --columna
+	'N', --tipo
 	'0', --pk
-	NULL, --secuencia
+	'', --secuencia
 	NULL, --largo
 	NULL, --no_nulo
 	'0', --no_nulo_db
 	'0', --externa
-	NULL  --tabla
+	'propiedades'  --tabla
 );
 --- FIN Grupo de desarrollo 13
