@@ -1,6 +1,6 @@
 <?php
 require_once ('adebug.php');
-
+require_once('reservas/dao_reservas.php');
 class ci_agregarreserva extends SeGeA_2_ci
 {
 
@@ -27,6 +27,26 @@ class ci_agregarreserva extends SeGeA_2_ci
         }
     	}
 
+            function ajax__getMonto ($id, $respuesta){
+
+            //$respuesta->set($id);
+             $respuesta->set(dao_reservas::getMonto($id));
+            }
+            /**
+             * Metodo invocado desde JS para 'calcular' el nuevo importe
+             */
+            function ajax__calcular($parametros, toba_ajax_respuesta $respuesta)
+            {
+                //--- Calculo el valor total en base a las fechas y el valor diario
+                $fecha1 = toba_fecha::desde_pantalla($parametros['fecha_inicio']);
+                $fecha2 = toba_fecha::desde_pantalla($parametros['fecha_fin']);
+                $dias = $fecha1->diferencia_dias($fecha2);
+                $importe = $dias * $parametros['precio'];
+
+                //-- Paso la informacion a JS
+                $respuesta->set(array($dias, $importe));
+            }
+
       //-----------------------------------------------------------------------------------
   		//---- form_recomendacion-------------------------------------------------------------------------
   		//-----------------------------------------------------------------------------------
@@ -45,24 +65,5 @@ class ci_agregarreserva extends SeGeA_2_ci
     		}
     	}
 
-      function ajax__getMonto ($id, $respuesta){
-
-      //$respuesta->set($id);
-       $respuesta->set(dao_reservas::getMonto($id));
-      }
-      /**
-       * Metodo invocado desde JS para 'calcular' el nuevo importe
-       */
-      function ajax__calcular($parametros, toba_ajax_respuesta $respuesta)
-      {
-          //--- Calculo el valor total en base a las fechas y el valor diario
-          $fecha1 = toba_fecha::desde_pantalla($parametros['fecha_inicio']);
-          $fecha2 = toba_fecha::desde_pantalla($parametros['fecha_fin']);
-          $dias = $fecha1->diferencia_dias($fecha2);
-          $importe = $dias * $parametros['precio'];
-
-          //-- Paso la información a JS
-          $respuesta->set(array($dias, $importe));
-      }
 }
 ?>

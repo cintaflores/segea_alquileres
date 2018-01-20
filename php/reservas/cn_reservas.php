@@ -55,31 +55,46 @@ class cn_reservas extends SeGeA_2_cn
 		$this->dep('dr_reserva')->tabla('dt_reserva')->eliminar_todo();
 	}
 
+
 	//-----------------------------------------------------------------------------------
-	//---- dt_roles ----------------------------------------------------------
+	//---- dt_detalle_reserva ----------------------------------------------------------
 	//-----------------------------------------------------------------------------------
-	function procesar_filas_roles($datos)
+	function procesar_filas_detalle_reservas($datos)
 	{
-		$this->dep('dr_reserva')->tabla('dt_roles')->procesar_filas($datos);
+		$this->dep('dr_reserva')->tabla('dt_detalle_reserva')->procesar_filas($datos);
 	}
 
-	function get_roles()
+	function get_detalle_reservas()
 	{
-		$datos = $this->dep('dr_reserva')->tabla('dt_roles')->get_filas();
+		$datos = $this->dep('dr_reserva')->tabla('dt_detalle_reserva')->get_filas();
 		return $datos;
 	}
 
 	//-----------------------------------------------------------------------------------
-	//---- dt_propiedades ----------------------------------------------------------
+	//---- dt_persona ----------------------------------------------------------
 	//-----------------------------------------------------------------------------------
-	function procesar_filas_reservas($datos)
+	function procesar_filas_persona($datos)
 	{
-		$this->dep('dr_reserva')->tabla('dt_propiedades')->procesar_filas($datos);
+		$this->dep('dr_reserva')->tabla('dt_persona')->procesar_filas($datos);
 	}
 
-	function get_propiedades()
+	function get_personas()
 	{
-		$datos = $this->dep('dr_reserva')->tabla('dt_propiedades')->get_filas();
+		$datos = $this->dep('dr_reserva')->tabla('dt_persona')->get_filas();
+		return $datos;
+	}
+
+	//-----------------------------------------------------------------------------------
+	//---- dt_recomendacion ----------------------------------------------------------
+	//-----------------------------------------------------------------------------------
+	function procesar_filas_recomendacion($datos)
+	{
+		$this->dep('dr_persona')->tabla('dt_recomendacion')->procesar_filas($datos);
+	}
+
+	function get_recomendacion()
+	{
+		$datos = $this->dep('dr_persona')->tabla('dt_recomendacion')->get_filas();
 		return $datos;
 	}
 }
