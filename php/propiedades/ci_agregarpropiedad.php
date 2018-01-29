@@ -1,7 +1,7 @@
 <?php
 require_once('propiedades/dao_propiedades.php');
 require_once ('adebug.php');
-require_once('oc_form_ml.php');
+//require_once('oc_form_ml.php');
 
 class ci_agregarpropiedad extends SeGeA_2_ci
 {
@@ -79,53 +79,124 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		$form->set_datos($datos);
 	}
 
-	//----------------------------------------------------------------------------
-	//---- form_ml_fotos----------------------------------------------------------
-	//----------------------------------------------------------------------------
+	// //----------------------------------------------------------------------------
+	// //---- form_ml_fotos----------------------------------------------------------
+	// //----------------------------------------------------------------------------
+	//
+	// function conf__form_ml_fotos(SeGeA_2_ei_formulario_ml $form_ml)
+	// {
+	// 	$oc_ml_fotos = $this->obj_cache('form_ml_fotos_fpir'); //Aquí faltaba el manejo de oc para ml_fotos
+	//
+	// 	ei_arbol(['conf__form_ml_fotos', 'oc_ml_fotos1' => $oc_ml_fotos->get_cache()]);
+	//
+	// 	$datos = $oc_ml_fotos->get_cache();
+	// 	if (!$datos) { // Si no hay datos
+	// 		if ($this->cn()->hay_cursor()) {
+	// 			$datos = $this->cn()->get_fotos();
+	//
+	// 			ei_arbol(['datos_fotos' => $datos]);
+	//
+	// 			$datos = $this->cn()->get_blobs_fotos($datos);
+	//
+	// 			ei_arbol(['datos_fotos2' => $datos]);
+	//
+	// 			$oc_ml_fotos->set_cache($datos);
+	//
+	// 			ei_arbol(['oc_ml_fotos2' => $oc_ml_fotos->get_cache()]);
+	// 		}
+	// 	}
+	//
+	// 	$form_ml->set_datos($datos);
+	// }
+	//
+	// function evt__form_ml_fotos__modificacion($datos)
+	// {
+	// 	ei_arbol(['evt__form_ml_fotos__modificacion']);
+	// 	$cache_fotos = $this->obj_cache('form_ml_fotos_fpir');
+	// 	if ($datos) {
+	// 		$this->cn()->procesar_filas_fotos($datos);
+	// 		$this->cn()->set_blobs_fotos($datos);
+	//
+	// 		$datos = $this->cn()->get_fotos();
+	// 		ei_arbol(['datos_fotos1' => $datos]);
+	//
+	// 		$datos = $this->cn()->get_blobs_fotos($datos);
+	// 		ei_arbol(['datos_fotos2' => $datos]);
+	//
+	// 		$this->obj_cache('form_ml_fotos_fpir')->set_cache($datos);
+	// 	}
+	// }
 
-	function conf__form_ml_fotos(SeGeA_2_ei_formulario_ml $form_ml)
-	{
-		$oc_ml_fotos = $this->obj_cache('form_ml_fotos_fpir'); //Aquí faltaba el manejo de oc para ml_fotos
+	  //-----------------------------------------------------------------------------------
+  	//-----------------------------------------------------------------------------------
+ 		//---- form_ml_fotos-------------------------------------------------------------------------
+ 		//-----------------------------------------------------------------------------------
 
-		ei_arbol(['conf__form_ml_fotos', 'oc_ml_fotos1' => $oc_ml_fotos->get_cache()]);
+ 		function evt__form_ml_fotos__modificacion($datos)
+ 			{
+			//	$anterior = $this->s__datos['form_ml_fotos'];
+			//	foreach ($anterior as $keya => $valuea) {
+					foreach ($datos as $keyd => $valued) {
+						if (isset($valuea['id_imagen'])){
+							if (isset($valued['id_imagen'])){
+								if ($valuea['id_imagen']=$valued['id_imagen']){
+									if (isset($valuea['imagen']) && !isset($valued['imagen'])){
+										$datos[$keyd]['imagen'] = $valuea['imagen'];
+										$datos[$keyd]['imagen?html'] = $valuea['imagen?html'];
+										$datos[$keyd]['imagen?url'] = $valuea['imagen?url'];
+									}
+								}
+							}
+						}
+					}
+			//	}
+				// $anterior = $this->s__datos['form_ml_fotos'];
+				// foreach ($anterior as $keya => $valuea) {
+				// 	foreach ($datos as $keyd => $valued) {
+				// 		if (isset($valuea['id_imagen'])){
+				// 			if (isset($valued['id_imagen'])){
+				// 				if ($valuea['id_imagen']=$valued['id_imagen']){
+				// 					if (isset($valuea['imagen']) && !isset($valued['imagen'])){
+				// 						$datos[$keyd]['imagen'] = $valuea['imagen'];
+				// 						$datos[$keyd]['imagen?html'] = $valuea['imagen?html'];
+				// 						$datos[$keyd]['imagen?url'] = $valuea['imagen?url'];
+				// 					}
+				// 				}
+				// 			}
+				// 		}
+				// 	}
+				// }
 
-		$datos = $oc_ml_fotos->get_cache();
-		if (!$datos) { // Si no hay datos
-			if ($this->cn()->hay_cursor()) {
+			if($datos){
+				$this->cn()->procesar_filas_fotos($datos);
+				$this->cn()->set_blobs($datos);
+
 				$datos = $this->cn()->get_fotos();
+				$datos = $this->cn()->get_blobs($datos);
+ 				$this->s__datos['form_ml_fotos'] = $datos;
+ 			}
 
-				ei_arbol(['datos_fotos' => $datos]);
-
-				$datos = $this->cn()->get_blobs_fotos($datos);
-
-				ei_arbol(['datos_fotos2' => $datos]);
-
-				$oc_ml_fotos->set_cache($datos);
-
-				ei_arbol(['oc_ml_fotos2' => $oc_ml_fotos->get_cache()]);
 			}
+
+ 			function conf__form_ml_fotos(SeGeA_2_ei_formulario_ml $form_ml)
+ 			{
+				  if (isset($this->s__datos['form_ml_fotos'])) {
+						$datos = $this->s__datos['form_ml_fotos'];
+						$form_ml->set_datos($datos);
+					} else if ($this->cn()->hay_cursor()) {
+
+				// if (isset($this->s__datos['form_ml_fotos'])){
+				// 			$form_ml->set_datos($this->s__datos['form_ml_fotos']);
+				// } else {
+				if ($this->cn()->hay_cursor()) {
+ 						$datos = $this->cn()->get_fotos();
+ 						$datos = $this->cn()->get_blobs($datos);
+ 						$this->s__datos['form_ml_fotos'] = $datos;
+ 						$form_ml->set_datos($datos);
+ 					}
 		}
-
-		$form_ml->set_datos($datos);
-	}
-
-	function evt__form_ml_fotos__modificacion($datos)
-	{
-		ei_arbol(['evt__form_ml_fotos__modificacion']);
-		$cache_fotos = $this->obj_cache('form_ml_fotos_fpir');
-		if ($datos) {
-			$this->cn()->procesar_filas_fotos($datos);
-			$this->cn()->set_blobs_fotos($datos);
-
-			$datos = $this->cn()->get_fotos();
-			ei_arbol(['datos_fotos1' => $datos]);
-
-			$datos = $this->cn()->get_blobs_fotos($datos);
-			ei_arbol(['datos_fotos2' => $datos]);
-
-			$this->obj_cache('form_ml_fotos_fpir')->set_cache($datos);
-		}
-	}
+			//	}
+				}
 
 
 	// //-----------------------------------------------------------------------------------
