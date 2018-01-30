@@ -120,7 +120,7 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 			$datos = $this->cn()->get_fotos();
 			ei_arbol(['datos_fotos1' => $datos]);
 
-			$datos = $this->cn()->get_blobs_fotos($datos);
+			// $datos = $this->cn()->get_blobs_fotos($datos); //< Esta implementación de get_blobs produce el error de que no se guarde la imágen en la base de datos por eso hay que quitarla o borrarla
 			ei_arbol(['datos_fotos2' => $datos]);
 
 			$this->obj_cache('form_ml_fotos_fpir')->set_cache($datos);
