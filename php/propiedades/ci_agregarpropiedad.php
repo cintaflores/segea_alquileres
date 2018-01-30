@@ -109,10 +109,21 @@ class ci_agregarpropiedad extends SeGeA_2_ci
 		$form_ml->set_datos($datos);
 	}
 
+	function quitarImagenesNulas($datos)
+	{
+		foreach ($datos as $key => $value) {
+			if (is_null($value['imagen'])) {
+				unset($datos[$key]);
+			}
+		}
+		return $datos;
+	}
+
 	function evt__form_ml_fotos__modificacion($datos)
 	{
 		ei_arbol(['evt__form_ml_fotos__modificacion']);
 		$cache_fotos = $this->obj_cache('form_ml_fotos_fpir');
+		$datos = $this->quitarImagenesNulas($datos); //< Es necesario que no se procecen los seteos de imagen cuando son null (de todos modos no generan cambios en la base de datos), por lo tanto los quitamos del array.
 		if ($datos) {
 			$this->cn()->procesar_filas_fotos($datos);
 			$this->cn()->set_blobs_fotos($datos);
