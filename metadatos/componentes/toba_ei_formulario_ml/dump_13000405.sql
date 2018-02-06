@@ -16,8 +16,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_ei_formulario_ml', --clase
 	'13000008', --punto_montaje
-	NULL, --subclase
-	NULL, --subclase_archivo
+	'form_ml_detalles_contratos', --subclase
+	'contratos/form_ml_detalles_contratos.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'ci_contratos - form_ml_detalles_contratos', --nombre

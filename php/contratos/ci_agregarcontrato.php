@@ -1,6 +1,6 @@
 <?php
 require_once ('adebug.php');
-
+require_once('contratos/dao_contratos.php');
 class ci_agregarcontrato extends SeGeA_2_ci
 {
 
@@ -63,50 +63,51 @@ class ci_agregarcontrato extends SeGeA_2_ci
 
 
 
-	//-----------------------------------------------------------------------------------
-	//---- form_ml_cuotas ---------------------------------------------------------------
-	//-----------------------------------------------------------------------------------
+      //-----------------------------------------------------------------------------------
+      //---- form_ml_cuotas ---------------------------------------------------------------
+      //-----------------------------------------------------------------------------------
 
-	function conf__form_ml_cuotas(SeGeA_2_ei_formulario_ml $form_ml)
-	{
-    $fec_venc = new DateTime();
-    $array_cuota = [];
-    $datos = $this->cn()->get_cuotas();
-    $datos_form_contrato = $this->s__datos['form'];
-    $cant_meses = $datos_form_contrato['cantidad'];
-    $fec_inicio = strtotime(str_replace('-','/',$datos_form_contrato['fecha_inicio']));
-    $mes_inicio = getdate($fec_inicio)['mon']-1;
-    $anio_inicio = getdate($fec_inicio)['year'];
-    $anio_venc = $anio_inicio;
-    for ($i=0; $i < $cant_meses; $i++){
-      $dia_venc = 10;
-      $mes_inicio = ($mes_inicio + 1 == 13 ? 1 : $mes_inicio + 1);
-      if ($mes_inicio +1 == 13){
-        $anio_venc = $anio_venc +1;
-        $fec_venc = $anio_venc. "-1-" .$dia_venc;
-      } else {
-        $fec_venc = $anio_venc. "-" .($mes_inicio +1). "-" .$dia_venc;
+      function conf__form_ml_cuotas(SeGeA_2_ei_formulario_ml $form_ml)
+      {
+        $fec_venc = new DateTime();
+        $array_cuota = [];
+        $datos = $this->cn()->get_cuotas();
+        $datos_form = $this->s__datos['form'];
+        $datos_form['id_tipo_contrato'];
+        $cant_meses = dao_contratos::get_opcionesCant_meses($datos_form['id_tipo_contrato']);
+        $fec_inicio = strtotime(str_replace('-','/',$datos_form['fecha_inicio']));
+        $mes_inicio = getdate($fec_inicio)['mon']-1;
+        $anio_inicio = getdate($fec_inicio)['year'];
+        $anio_venc = $anio_inicio;
+        for ($i=0; $i < $cant_meses; $i++){
+          $dia_venc = 10;
+          $mes_inicio = ($mes_inicio + 1 == 13 ? 1 : $mes_inicio + 1);
+          if ($mes_inicio +1 == 13){
+            $anio_venc = $anio_venc +1;
+            $fec_venc = $anio_venc. "-1-" .$dia_venc;
+          } else {
+            $fec_venc = $anio_venc. "-" .($mes_inicio +1). "-" .$dia_venc;
+          }
+          $array_cuota[] = ['nro_cuota' => $i+1
+                            ,'id_periodo' => $mes_inicio
+                            ,'fecha_vencimiento' => $fec_venc
+                            ,'anio'=> $anio_venc
+                            ,'monto_descuento'=> 0
+                            ,'monto_a_pagar'=> 0];
+        }
+      $form_ml->set_datos_defecto($array_cuota);
       }
-      $array_cuota[] = ['nro_cuota' => $i+1
-                        ,'id_periodo' => $mes_inicio
-                        ,'fecha_vencimiento' => $fec_venc
-                        ,'anio'=> $anio_venc
-                        ,'monto_descuento'=> 0
-                        ,'monto_a_pagar'=> 0];
-    }
-  $form_ml->set_datos_defecto($array_cuota);
-	}
 
-	function evt__form_ml_cuotas__modificacion($datos)
-	{
-    foreach ($datos as $key => $value) {
-    $datos[$key]['apex_ei_analisis_fila'] = 'A';
-    }
-    $this->cn()->procesar_filas_cuotas($datos);
-    $datos = $this->cn()->get_cuotas();
+      function evt__form_ml_cuotas__modificacion($datos)
+      {
+        foreach ($datos as $key => $value) {
+        $datos[$key]['apex_ei_analisis_fila'] = 'A';
+        }
+        $this->cn()->procesar_filas_cuotas($datos);
+        $datos = $this->cn()->get_cuotas();
 
-    $this->s__datos['form_ml_cuotas'] = $datos;
-	}
+        $this->s__datos['form_ml_cuotas'] = $datos;
+      }
 
 }
 ?>

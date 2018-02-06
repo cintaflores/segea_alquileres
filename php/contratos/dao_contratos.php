@@ -11,14 +11,18 @@ class dao_contratos
       $where_armado="";
     }
       $sql = "SELECT
-              t_c.id_contrato,
-              t_c.fecha_inicio,
-              t_c.fecha_fin,
-              t_c.cantidad,
-            	t_p.id_propiedad
+                    t_c.id_contrato,
+                    t_c.fecha_inicio,
+                    t_c.fecha_fin,
+                    t_p.id_propiedad,
+                    t_p.nombre_propiedad,
+                    t_tc.id_tipo_contrato,
+                    t_tc.nombre_tipo_contrato,
+                    t_tc.cantidad
             	FROM
               	contratos as t_c
               	inner join propiedades as t_p on t_c.id_propiedad=t_p.id_propiedad
+                inner join tipos_contratos as t_tc on t_c.id_tipo_contrato=t_tc.id_tipo_contrato
                 $where_armado";
       $datos = consultar_fuente($sql);
       return $datos;
@@ -88,5 +92,28 @@ class dao_contratos
     return $opciones;
   }
 
+  static function get_opcionesTiposContratos()
+  {
+    $sql = " SELECT
+                    id_tipo_contrato,
+                    nombre_tipo_contrato,
+                    cantidad
+              FROM tipos_contratos
+              ORDER BY nombre_tipo_contrato";
+
+    $opciones = consultar_fuente($sql);
+    return $opciones;
+  }
+
+  static function get_opcionesCant_meses($id_tipo_contrato)
+  {
+    $id_tipo_contrato = quote($id_tipo_contrato);
+
+    $sql = " SELECT
+              cantidad
+            FROM tipos_contratos
+             WHERE id_tipo_contrato = $id_tipo_contrato";
+    return consultar_fuente($sql)[0]['cantidad'];
+    }
 }
 ?>

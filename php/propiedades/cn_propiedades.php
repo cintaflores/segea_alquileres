@@ -108,7 +108,7 @@ class cn_propiedades extends SeGeA_2_cn
 			return $datos;
 	}
 
-	function get_blobs($datos)
+	function get_blobs_fotos($datos)
 	{
 			$datos_r = array();
 			foreach ($datos as $key => $value) {
@@ -117,7 +117,7 @@ class cn_propiedades extends SeGeA_2_cn
 			return $datos_r;
 	}
 
-	function set_blobs($datos)
+	function set_blobs_fotos($datos)
 	{
 			foreach ($datos as $key => $value) {
 				$this->set_blob($datos[$key], $key);
