@@ -31,6 +31,10 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 
 		{$this->objeto_js}.crear_fila_detalle = function()
 		{
+		if (this.filas().length == 0) {
+			this.n_fila = this.crear_fila();
+			return;
+		}
 		if (this.valida_cant_cuotas_b()) {
 			ultimaFila = this.filas()[this.filas().length - 1];
 			valorUltimaFila = this.ef('cant_cuotas_b').ir_a_fila(ultimaFila).get_estado();
