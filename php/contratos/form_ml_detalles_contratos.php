@@ -13,6 +13,7 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 	function extender_objeto_js()
 	{
 	$cantidad = $this->s__datos['cantidad'];
+	$cantidad = "'$cantidad'";
 
 	$jsAuxiliares = "
 
@@ -30,6 +31,10 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 
 		{$this->objeto_js}.crear_fila_detalle = function()
 		{
+		if (this.filas().length == 0) {
+			this.n_fila = this.crear_fila();
+			return;
+		}
 		if (this.valida_cant_cuotas_b()) {
 			ultimaFila = this.filas()[this.filas().length - 1];
 			valorUltimaFila = this.ef('cant_cuotas_b').ir_a_fila(ultimaFila).get_estado();
@@ -170,7 +175,7 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 		}
 		}
 
-		this.calcularSubtotal(valoring, valorca, fila);
+		// this.calcularSubtotal(valoring, valorca, fila); < Esta función no está creada en este archivo
 		}
 
 		{$this->objeto_js}.evt__importe__procesar = function(es_inicial, fila)
@@ -190,14 +195,14 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 		valorca = this.ef('cant_cuotas_a').ir_a_fila(fila).get_estado();
 		prxFila = this.proximaFila(fila);
 		if (valoring > cantc) {
-		this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('no puede ser mayor a $cantidad');
+		this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('no puede ser mayor a '+$cantidad);
 		return false;
 		} else if (valoring < valorca) {
 		this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('no puede ser menor a ' + valorca);
 		return false;
 		} else if (valoring == cantc) {
 		if (prxFila > -1) {
-			this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('debe tener $cantidad como ultimo valor, y no debe aparecer mas de una vez en el formulario');
+			this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('debe tener '+$cantidad+' como ultimo valor, y no debe aparecer mas de una vez en el formulario');
 			return false;
 		}
 		}
