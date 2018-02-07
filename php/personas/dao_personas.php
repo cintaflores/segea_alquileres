@@ -19,7 +19,9 @@ class dao_personas
               t_td.id_tipo_documento,
               t_td.nombre_tipo_documento||', '||t_p.dni documento,
             	t_p.cuit_cuil,
+              t_p.ing_bruto,
             	t_p.fecha_nacimiento,
+              t_p.fecha_ini_act,
               t_ti.id_tipo_iva,
             	t_ti.nombre_tipo_iva,
             	t_p.vehiculos

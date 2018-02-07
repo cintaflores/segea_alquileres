@@ -14,11 +14,13 @@ class dao_reservas
               t_r.id_reserva,
               t_r.fecha_reservado,
               t_pr.id_propiedad,
+              t_pr.nombre_propiedad,
               t_r.precio,
               t_r.fecha_inicio,
               t_r.fecha_fin,
               t_r.fecha_confirmacion,
-              t_p.id_persona
+              t_p.id_persona,
+              coalesce(razon_social, apellido||', '||nombre) entidad
             	FROM
               	reservas as t_r
               	inner join propiedades as t_pr on t_r.id_propiedad=t_pr.id_propiedad
@@ -57,7 +59,7 @@ class dao_reservas
     if (count($resultado) > 0) {
       return $resultado[0]['entidad'];
     } else {
-      return 'Fall?, intente nuevamente';
+      return 'Fallo, intente nuevamente';
     }
   }
 
