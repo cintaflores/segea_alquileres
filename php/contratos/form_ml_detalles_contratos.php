@@ -171,7 +171,7 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 		}
 		}
 
-		this.calcularSubtotal(valoring, valorca, fila);
+		// this.calcularSubtotal(valoring, valorca, fila); < Esta función no está creada en este archivo
 		}
 
 		{$this->objeto_js}.evt__importe__procesar = function(es_inicial, fila)
