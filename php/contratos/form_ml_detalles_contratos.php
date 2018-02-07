@@ -13,6 +13,7 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 	function extender_objeto_js()
 	{
 	$cantidad = $this->s__datos['cantidad'];
+	$cantidad = "'$cantidad'";
 
 	$jsAuxiliares = "
 
@@ -190,14 +191,14 @@ class form_ml_detalles_contratos extends SeGeA_2_ei_formulario_ml
 		valorca = this.ef('cant_cuotas_a').ir_a_fila(fila).get_estado();
 		prxFila = this.proximaFila(fila);
 		if (valoring > cantc) {
-		this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('no puede ser mayor a $cantidad');
+		this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('no puede ser mayor a '+$cantidad);
 		return false;
 		} else if (valoring < valorca) {
 		this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('no puede ser menor a ' + valorca);
 		return false;
 		} else if (valoring == cantc) {
 		if (prxFila > -1) {
-			this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('debe tener $cantidad como ultimo valor, y no debe aparecer mas de una vez en el formulario');
+			this.ef('cant_cuotas_b').ir_a_fila(fila).set_error('debe tener '+$cantidad+' como ultimo valor, y no debe aparecer mas de una vez en el formulario');
 			return false;
 		}
 		}
